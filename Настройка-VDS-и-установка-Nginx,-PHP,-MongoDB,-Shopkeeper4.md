@@ -255,7 +255,7 @@ db.createUser(
 ~~~
 nano /etc/nginx/sites-available/shopkeeper4.conf
 ~~~
-Использовать пример конфигурации отсюда [https://github.com/andchir/shopkeeper4/wiki/Настройка-веб-сервера](https://github.com/andchir/shopkeeper4/wiki/Настройка-веб-сервера)
+Использовать пример конфигурации отсюда [https://github.com/andchir/shk4-wiki/blob/master/Настройка-веб-сервера](https://github.com/andchir/shk4-wiki/blob/master/Настройка-веб-сервера)
 ~~~
 ln -s /etc/nginx/sites-available/shopkeeper4.conf /etc/nginx/sites-enabled/shopkeeper4.conf
 ~~~
@@ -270,7 +270,7 @@ mkdir /var/www/shopkeeper4 && cd /var/www/shopkeeper4
 ~~~
 nano shk4-install.sh
 ~~~
-Вставить код отсюда [https://github.com/andchir/shopkeeper4/wiki/Bash-скрипт-для-установки](https://github.com/andchir/shopkeeper4/wiki/Bash-скрипт-для-установки)
+Вставить код отсюда [https://github.com/andchir/shk4-wiki/blob/master/Bash-скрипт-для-установки](https://github.com/andchir/shk4-wiki/blob/master/Bash-скрипт-для-установки)
 
 Установить права на исполнение:
 ~~~
