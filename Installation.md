@@ -30,7 +30,7 @@ server: 'mongodb://%mongodb_server%:%mongodb_port%'
 
 6. If all data is entered correctly, then everything necessary will be added to the database, as well as store test data.
 
-For installation on a dedicated server or VDS, for convenience, you can use the [Bash script for installation](https://github.com/andchir/shk4-wiki/blob/master/Bash-script-for-installation). It will download the archive of the application, unpack it and set the necessary permissions on the files and folders.
+For installation on a dedicated server or VDS, for convenience, you can use the [Bash script for installation](https://github.com/andchir/shk4-wiki/blob/master/Bash-script-for-installation.md). It will download the archive of the application, unpack it and set the necessary permissions on the files and folders.
 
 Additional materials
 ------------------------
