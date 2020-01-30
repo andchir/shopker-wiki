@@ -16,6 +16,10 @@ locale -a | grep ru
 ~~~
 locale-gen ru_RU.UTF-8
 ~~~
+Другой вариант установки нужныз локалей:
+~~~
+dpkg-reconfigure locales
+~~~
 
 Обновить пакеты:
 ~~~
