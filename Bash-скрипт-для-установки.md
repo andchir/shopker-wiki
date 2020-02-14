@@ -6,7 +6,7 @@ Bash скрипт для установки приложения на серве
 
 DIR="$(pwd)"
 DOWNLOAD_PATH="https://modx-shopkeeper.ru/assets/files/shk4/"
-DOWNLOAD_FILENAME="shk4-latest.zip"
+DOWNLOAD_FILENAME="shopker-latest.zip"
 OWNER_USER="www-data"
 OWNER_GROUP="www-data"
 
@@ -56,7 +56,7 @@ else
 fi
 ~~~
 
-Проверить и отредактировать URL скачивания файла и имя пользователя, при необходимости.
+Проверить и отредактировать URL скачивания файла (DOWNLOAD_PATH, DOWNLOAD_FILENAME) и имя пользователя (OWNER_USER, OWNER_GROUP), при необходимости.
 
 Загрузить файл на сервер в папку, в которой Вы хотите установить приложение.
 
