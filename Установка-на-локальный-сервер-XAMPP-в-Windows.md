@@ -4,7 +4,7 @@
 
 3. Скачать и установить MongoDB Compass: [https://www.mongodb.com/download-center/compass](https://www.mongodb.com/download-center/compass)
 
-4. Скачать PHP MongoDB расширение: [https://pecl.php.net/package/mongodb/1.7.2/windows](https://pecl.php.net/package/mongodb/1.7.2/windows)
+4. Скачать PHP MongoDB расширение: [https://pecl.php.net/package/mongodb/1.7.2/windows](https://pecl.php.net/package/mongodb/1.7.2/windows)  
 Например для 64-битного процессора и PHP 7.4:  
 [https://windows.php.net/downloads/pecl/releases/mongodb/1.7.2/php_mongodb-1.7.2-7.4-ts-vc15-x64.zip](https://windows.php.net/downloads/pecl/releases/mongodb/1.7.2/php_mongodb-1.7.2-7.4-ts-vc15-x64.zip)
 
