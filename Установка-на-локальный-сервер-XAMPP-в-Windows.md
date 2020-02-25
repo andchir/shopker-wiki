@@ -68,6 +68,7 @@ server: 'mongodb://%mongodb_server%:%mongodb_port%'
 ~~~
 "C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="C:\data\db"
 ~~~
+Запустить команду нажатием клавиши Enter на клавиатуре.
 
 13. Открыть в браузере [http://shopker.localhost/](http://shopker.localhost/)  
 Если конфигурационный файл редактировался после открытия этого адреса, то нужно очистить кэш:  
