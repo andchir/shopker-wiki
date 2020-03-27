@@ -253,7 +253,7 @@ db.createUser(
 ~~~
 Готово. Для выхода из mongo shell нажать клавиши "Ctrl+c".
 
-### Установка Shopkeeper4
+### Установка Shopker
 
 Создать конфигурацию для Nginx:
 ~~~
@@ -270,18 +270,15 @@ ln -s /etc/nginx/sites-available/shopkeeper4.conf /etc/nginx/sites-enabled/shopk
 ~~~
 mkdir /var/www/shopkeeper4 && cd /var/www/shopkeeper4
 ~~~
-Создать файл "shk4-install.sh":
+Загрузить ZIP-файл приложения Shopker. Распаковать архив:
 ~~~
-nano shk4-install.sh
+unzip shopker-4.1.x.zip
 ~~~
-Вставить код отсюда [https://github.com/andchir/shk4-wiki/blob/master/Bash-скрипт-для-установки.md](https://github.com/andchir/shk4-wiki/blob/master/Bash-скрипт-для-установки.md)
+Настроить права доступа:
+~~~
+sudo chown -R www-data:www-data .
+sudo find . -type d -exec chmod 755 {} \;
+sudo find . -type f -exec chmod 644 {} \;
+~~~
 
-Установить права на исполнение:
-~~~
-chmod +x shk4-install.sh
-~~~
-Запустить скрипт:
-~~~
-./shk4-install.sh.
-~~~
 Далее вам будет предложено открыть сайт в браузере и продолжить установку. Нужно ввести имя пользователя БД, пароль, имя базы данных (она будет создана автоматически). Указать адрес эл.почты и пароль администратора.
