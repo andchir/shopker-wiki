@@ -270,7 +270,12 @@ ln -s /etc/nginx/sites-available/shopkeeper4.conf /etc/nginx/sites-enabled/shopk
 ~~~
 mkdir /var/www/shopkeeper4 && cd /var/www/shopkeeper4
 ~~~
-Загрузить ZIP-файл приложения Shopker. Распаковать архив:
+Загрузить ZIP-файл приложения Shopker, например с использованием wget:
+~~~
+wget https://path/to/shopker-4.1.x.zip
+~~~
+
+Распаковать архив:
 ~~~
 unzip shopker-4.1.x.zip
 ~~~
