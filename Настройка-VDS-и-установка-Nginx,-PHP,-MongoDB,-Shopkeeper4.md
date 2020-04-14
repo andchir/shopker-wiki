@@ -282,6 +282,7 @@ unzip shopker-4.1.x.zip
 Настроить права доступа:
 ~~~
 cd /var/www/shopkeeper4
+sudo chown -R www-data:www-data .
 find . -type d -exec chmod 755 {} \;
 ind . -type f -exec chmod 644 {} \;
 ~~~
