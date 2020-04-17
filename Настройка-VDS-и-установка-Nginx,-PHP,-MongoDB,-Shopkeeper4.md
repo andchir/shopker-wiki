@@ -284,7 +284,7 @@ unzip shopker-4.1.x.zip
 cd /var/www/shopkeeper4
 sudo chown -R www-data:www-data .
 find . -type d -exec chmod 755 {} \;
-ind . -type f -exec chmod 644 {} \;
+find . -type f -exec chmod 644 {} \;
 ~~~
 
 Открыть сайт в браузере и продолжить установку. Нужно ввести имя пользователя БД, пароль, имя базы данных (она будет создана автоматически). Указать адрес эл.почты и пароль администратора.
