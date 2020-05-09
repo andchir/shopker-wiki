@@ -166,6 +166,7 @@ add-apt-repository ppa:ondrej/php
 ~~~
 apt update
 ~~~
+Копировать все строки вместе:
 ~~~
 apt install php-pear php7.3 php7.3-common php7.3-cli \
 php7.3-curl php7.3-dev php7.3-gd php7.3-mbstring php7.3-zip \
