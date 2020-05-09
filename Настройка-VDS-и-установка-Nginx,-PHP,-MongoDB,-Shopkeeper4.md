@@ -260,11 +260,11 @@ db.createUser(
 
 Создать конфигурацию для Nginx:
 ~~~
-nano /etc/nginx/sites-available/shopkeeper4.conf
+nano /etc/nginx/sites-available/shopker.conf
 ~~~
 Использовать пример конфигурации отсюда [https://github.com/andchir/shk4-wiki/blob/master/Настройка-веб-сервера.md](https://github.com/andchir/shk4-wiki/blob/master/Настройка-веб-сервера.md)
 ~~~
-ln -s /etc/nginx/sites-available/shopkeeper4.conf /etc/nginx/sites-enabled/shopkeeper4.conf
+ln -s /etc/nginx/sites-available/shopker.conf /etc/nginx/sites-enabled/shopker.conf
 ~~~
 ~~~
 /etc/init.d/nginx restart
