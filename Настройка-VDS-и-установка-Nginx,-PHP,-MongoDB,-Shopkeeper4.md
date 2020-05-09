@@ -275,7 +275,7 @@ ln -s /etc/nginx/sites-available/shopker.conf /etc/nginx/sites-enabled/shopker.c
 ~~~
 
 ~~~
-mkdir /var/www/shopkeeper4 && cd /var/www/shopkeeper4
+mkdir /var/www/shopker && cd /var/www/shopker
 ~~~
 Загрузить ZIP-файл приложения Shopker, например, с использованием wget:
 ~~~
