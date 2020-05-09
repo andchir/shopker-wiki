@@ -107,11 +107,11 @@ PermitRootLogin no
 /etc/init.d/ssh restart
 ~~~
 
-Если Вы не хотите использовать SSH-ключи, добавить пользователя в группу sudo можно такой командой:
+Если Вы не хотите использовать SSH-ключи, добавить пользователя в группу **sudo** можно такой командой:
 ~~~
 usermod -aG sudo username
 ~~~
-Добавление в группу www-data:
+Добавление в группу **www-data**:
 ~~~
 usermod -aG www-data username
 ~~~
