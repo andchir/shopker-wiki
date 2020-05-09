@@ -248,9 +248,9 @@ db.auth('root', 'PASSWORD')
 ~~~
 db.createUser(
     {
-        user: "shopkeruser",
+        user: "shopker-user",
         pwd: "PASSWORD",
-        roles: [{role: "readWrite", db: "shk4-db"}]
+        roles: [{role: "readWrite", db: "shopker"}]
     }
 )
 ~~~
