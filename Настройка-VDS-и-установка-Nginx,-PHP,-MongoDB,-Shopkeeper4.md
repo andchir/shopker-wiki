@@ -159,8 +159,6 @@ ufw status
 ### Установка PHP 7.3
 
 ~~~
-apt install software-properties-common
-
 add-apt-repository ppa:ondrej/php
 ~~~
 ~~~
