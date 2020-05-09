@@ -212,7 +212,6 @@ nano /etc/mongod.conf
 ~~~
 Установить значения для параметров в файле (порядок параметров оставить исходным):
 ~~~
-engine: wiredTiger
 bindIp: 0.0.0.0
 security:
   authorization: "enabled"
@@ -247,7 +246,7 @@ db.auth('root', 'PASSWORD')
 ~~~
 db.createUser(
     {
-        user: "shopkeeper4user",
+        user: "shopkeruser",
         pwd: "PASSWORD",
         roles: [{role: "readWrite", db: "shk4-db"}]
     }
