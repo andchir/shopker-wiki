@@ -216,9 +216,11 @@ bindIp: 0.0.0.0
 security:
   authorization: "enabled"
 ~~~
+Старт базы данных:
 ~~~
 service mongod start
 ~~~
+Проверка состояния (Вы должны увидеть "Active: active (running)"):
 ~~~
 service mongod status
 ~~~
