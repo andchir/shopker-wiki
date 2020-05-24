@@ -176,10 +176,21 @@
 
 Действия корзины:
 - **add_to_cart** - Добавить в корзину.
+- **add_from_array** - Добавить несколько товаров с ID из массива.
 - **remove_by_index** (или "remove") - Удалить товар по индексу. 
 - **remove_by_id** - Удалить товар по ID.
 - **update** - Пресчитать количество товара в корзине.
 - **clean** - Очистить корзину.
+
+Пример добавления товара в корзину без использования формы (версия 4.2+):
+```js
+shoppingCart.callAction('add_to_cart', {item_id: 10, count: 2, category_id: 1}, 'shop');
+```
+
+Пример добавления сразу нескольких товаров (версия 4.2+):
+```js
+shoppingCart.callAction('add_from_array', {item_id: [10,11,12], count: [1,1,2], category_id: 1}, 'shop');
+```
 
 # JS-класс "Shopkeeper"
 
