@@ -1,4 +1,6 @@
 
+# Корзина товаров - JS-класс "ShoppingCart"
+
 ## Добавление товаров в корзину
 
 Добавление товаров в корзину работает без JavaScript. Но для добавления без перезагрузки страницы (Ajax) нужно использовать JavaScript.
@@ -32,7 +34,7 @@
 </script>
 ```
 
-### Параметры класса ShoppingCart
+### Параметр класса "ShoppingCart" с настройками (передается в конструктор класса)
 
 - **baseUrl** - Базовый URL. По умолчанию: '/'.
 - **connectorUrl** - URL для запросов. По умолчанию: '/shop_cart/action'.
@@ -130,12 +132,114 @@
 ### Авто-обновление мини-корзины
 
 На странице может быть несколько корзин. Например, основная и мини-корзина. В этом случае для обновления мини-корзины можно использовать CSS-классы,
-селекторы которых указаны в параметрах "selectorPriceTotal", "selectorCountTotal" и т.п.
+селекторы которых указаны в параметрах "selectorPriceTotal", "selectorCountTotal" и т.д.
 
+Пример:
 ```html
 <div class="shopping-cart-mini">
-    <span></span>
+    <span class="shopping-cart-count-total">0</span>
+    <span class="shopping-cart-price-total">0</span> руб.
 </div>
 ```
 
+Данные внутри элементов будут автоматически обновлени при совершении действий с корзиной, если включен режим "autoUpdateElements".
 
+### Действия с корзиной товаров
+
+Данные корзины должны находиться внутри элемента формы (``<form></form>``). Каждая кнопка с типом "submit" будет работать без обновления страницы,
+если инициализирован объект класса "ShoppingCart".
+
+Пример кнопки "Пересчитать":
+```html
+<form action="{{ path('shop_cart_action') }}" method="post">
+    ...
+
+    <button type="submit" name="action" value="update">
+        {{ 'Recalculate' | trans }}
+    </button>
+</form>
+```
+
+Пример кнопки удаления товара из корзины по индексу:
+```html
+<form action="{{ path('shop_cart_action') }}" method="post">
+    ...
+
+    {% for item in items %}
+        ...
+        <button type="submit" name="remove_by_index" value="{{ loop.index0 }}">
+            {{ 'Delete item' | trans }}
+        </button>
+    {% endfor %}
+</form>
+```
+
+Действия корзины:
+- **add_to_cart** - Добавить в корзину.
+- **remove_by_index** (или "remove") - Удалить товар по индексу. 
+- **remove_by_id** - Удалить товар по ID.
+- **update** - Пресчитать количество товара в корзине.
+- **clean** - Очистить корзину.
+
+# JS-класс "Shopkeeper"
+
+Если используется скрипт "app_build/app.js", то объект класса "Shopkeeper" уже создан в переменной "shk".
+
+```html
+<script src="{{ asset('app_build/app.js') }}"></script>
+```
+
+При создании объекта класса "Shopkeeper" автоматически вызывается метод "init", внутри которого вызываются методы "buttonsInit", "currencySelectInit".
+
+### Параметр класса "Shopkeeper" с настройками (передается в конструктор класса)
+
+- **baseUrl** - Базовый URL. По умолчанию: '/'.
+- **multiCurrency** - Режим мультивалютности. По умолчанию: false (но включается автоматически при изменении валюты).
+- **priceElSelector** - Селектор элементов с ценой (цена может меняться при применении параметров товара или изменении валюты). По умолчанию: 'shk-price'.
+- **priceFilterName** - Название фильтра цены (нужно для изменения цен слайдера с ценами в соответствии с курсом валюты). По умолчанию: '' (может устанавливаться автоматически, см. шаблон "catalog/filters.html.twig").
+- **currencyTranslate** - Переводы названий валют. По умолчанию: {RUB: 'руб.', UAH: 'грн'}.
+
+### Методы класса
+
+- **onReady** - Вызвать функцию после загрузки HTML элементов страницы.
+- **buttonsInit** - Инициализация действий вспомогательных кнопок. Кнопка с селектором ".shk-button-filters-hide" - скрыть фильтры, ".shk-button-filters-show" - показать фльтры.
+- **currencySelectInit** - Инициализация переключения валюты. Должен быть создан элемент "select" с идентификатором "shk-currency" (см. шаблон "catalog/currency_list.html.twig").
+- **filtersInit** - Инициализация фильтрации товаров (автоматически вызывает методы "slidersInit()" и "markSelected()"). После изменения одного фильтра автоматически показывается элемент с селектором ".shk-onfilter-change".
+- **slidersInit** - Инициализация слайдеров фильтрации.
+- **markSelected** - Выставить значения фильтров по URL страницы (используется в случае, если HTML фильтров закэширован).
+- **getUrlParams** - Получить все данные фильтров и сортировки.
+- **catalogListChange** - Изменение типа вывода списка товаров (список, плитка и т.п.). Сохраняется в куки.
+- **productParametersInit** - Инициализация параметров товаров, которые могут влиять на цену.
+- **getCurrentCurrency** - Получить текущее значение валюты.
+- **getCurrentCurrencyRate** - Получить курс валюты по названию.
+- **updateOptions** - Обновить значения настроек.
+- **showPreloaderToggle** - Показать/скрыть анимацию загрузки.
+
+Пример инициализации фильтров товаров:
+```js
+shk.onAfterInit(function() {
+    shk.filtersInit(true);
+});
+```
+
+Пример использования метода "catalogListChange()":
+```js
+document.querySelectorAll('#shkNavListType button').forEach(function(buttonEl) {
+        buttonEl.addEventListener('click', function(){
+            shk.catalogListChange(this.value);
+        }, false);
+    });
+}
+```
+
+Пример использовани метода "productParametersInit()":
+```js
+shk.productParametersInit('#shk-form', '.shk-price');
+```
+
+Пример использования метода "updateOptions()":
+```js
+document.addEventListener('DOMContentLoaded', function() {
+    shk.updateOptions({priceFilterName: 'price'});
+});
+```
