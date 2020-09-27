@@ -50,31 +50,21 @@ extension=mongodb
 9. Создать папку по адресу: ``C:\xampp\apps\shopker``  
 и загрузить в неё файлы приложения **Shopker**.
 
-10. Открыть в блокноте файл ``C:\xampp\apps\shopker\config\packages\doctrine_mongodb.yaml``  
-Закомментировать (поставить в начало #) строку
-~~~
-server: 'mongodb://%mongodb_user%:%mongodb_password%@%mongodb_server%:%mongodb_port%'
-~~~
-Раскомментировать (убрать #) строку
-~~~
-server: 'mongodb://%mongodb_server%:%mongodb_port%'
-~~~
-
-11. Запустить XAMPP ``C:\xampp\xampp-control.exe``  
+10. Запустить XAMPP ``C:\xampp\xampp-control.exe``  
 Проверить, чтобы Apache был запущен.
 
-12. Создать папки ``C:\data\db``  
+11. Создать папки ``C:\data\db``  
 Нажать кнопку "Shell" и вставить команду запуска **MongoDB**:
 ~~~
 "C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="C:\data\db"
 ~~~
 Запустить команду нажатием клавиши Enter на клавиатуре.
 
-13. Открыть в браузере [http://shopker.localhost/](http://shopker.localhost/)  
+12. Открыть в браузере [http://shopker.localhost/](http://shopker.localhost/)  
 Если конфигурационный файл редактировался после открытия этого адреса, то нужно очистить кэш:  
 Удалить папку ``C:\xampp\apps\shopker\var\cache``
 
-14. Откроется установщик приложения **Shopker**.  
+13. Откроется установщик приложения **Shopker**.  
 Переключить язык на русский. Заполнить поля: **Адрес эл. почты администратора**, **Пароль**, **Подтвердите пароль**.  
 В поле **"Имя базы данных"** ввести любое имя базы данных, например: **shopker-dev**  
 В разделе **"Настройки MongoDB"** оставить пустыми поля: **Имя пользователя**, **Пароль**, **URI для подключения**.  
