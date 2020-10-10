@@ -5,13 +5,13 @@ Bash скрипт для установки приложения на серве
 #!/bin/bash
 
 DIR="$(pwd)"
-DOWNLOAD_PATH="https://modx-shopkeeper.ru/assets/files/shk4/"
+DOWNLOAD_URL="https://shopker.org/digital_goods/my_purchases_download/10?email=xxx@xxx.com&sc=xxxxxxxxx"
 DOWNLOAD_FILENAME="shopker-latest.zip"
 OWNER_USER="www-data"
 OWNER_GROUP="www-data"
 
 echo ""
-echo -e "\\e[94m\\e[1m=== УСТАНОВКА SHOPKEEPER 4 ===\\e[0m"
+echo -e "\\e[94m\\e[1m=== УСТАНОВКА SHOPKER ===\\e[0m"
 echo ""
 read -n1 -r -p "Нажмите клавишу ENTER для продолжения..." key
 echo ""
@@ -20,8 +20,8 @@ if [ "$key" = '' ]; then
 
     echo -e "\\e[2m...Скачивание архива...\\e[0m"
     echo ""
-    
-    if wget $DOWNLOAD_PATH$DOWNLOAD_FILENAME >> "$DIR"/shk4-install.log 2>> "$DIR"/shk4-install.log; then
+
+    if wget -O $DOWNLOAD_FILENAME $DOWNLOAD_URL >> "$DIR"/shopker-install.log 2>> "$DIR"/shopker-install.log; then
         echo -e "\\e[32mСкачивание прошло успешно!\\e[0m"
         echo ""
     else
@@ -29,11 +29,11 @@ if [ "$key" = '' ]; then
         echo ""
         exit 1
     fi
-    
+
     echo -e "\\e[2m...Распаковка архива в текущую папку...\\e[0m"
     echo ""
-    
-    if unzip $DOWNLOAD_FILENAME >> "$DIR"/shk4-install.log 2>> "$DIR"/shk4-install.log; then
+
+    if unzip $DOWNLOAD_FILENAME >> "$DIR"/shopker-install.log 2>> "$DIR"/shopker-install.log; then
         echo -e "\\e[32mРаспаковка прошла успешно!\\e[0m"
         echo ""
     else
@@ -41,11 +41,11 @@ if [ "$key" = '' ]; then
         echo ""
         exit 1
     fi
-    
+
     sudo chown -R $OWNER_USER:$OWNER_GROUP "$DIR"
     sudo find "$DIR" -type d -exec chmod 755 {} \;
     sudo find "$DIR" -type f -exec chmod 644 {} \;
-    
+
     echo -e "\\e[32mТеперь Вы можете открыть сайт в браузере и продолжить установку.\\e[0"
     echo ""
 
@@ -54,6 +54,7 @@ else
     echo -e "\\e[31mОТМЕНЕНО"
     echo ""
 fi
+
 ~~~
 
 Проверить и отредактировать URL скачивания файла (DOWNLOAD_PATH, DOWNLOAD_FILENAME) и имя пользователя (OWNER_USER, OWNER_GROUP), при необходимости.
