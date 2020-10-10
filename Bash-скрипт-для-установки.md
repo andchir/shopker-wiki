@@ -46,7 +46,7 @@ if [ "$key" = '' ]; then
     sudo find "$DIR" -type d -exec chmod 755 {} \;
     sudo find "$DIR" -type f -exec chmod 644 {} \;
 
-    echo -e "\\e[32mТеперь Вы можете открыть сайт в браузере и продолжить установку.\\e[0"
+    echo -e "\\e[32mТеперь Вы можете открыть сайт в браузере и продолжить установку."
     echo ""
 
 else
