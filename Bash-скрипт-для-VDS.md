@@ -6,11 +6,11 @@ Bash скрипт для установки MongoDB, Nginx, PHP на серве�
 ssh root@111.222.333.444
 touch "shopker_server_install.sh"
 nano "shopker_server_install.sh"
-
-Содержимое файла:
 ~~~
 
-```bash
+Содержимое файла:
+
+```shell script
 #!/bin/bash
 
 DIR="$(pwd)"
