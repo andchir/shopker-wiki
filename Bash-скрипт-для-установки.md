@@ -120,6 +120,8 @@ fi
 
 Как использовать: ``./shopker-install.sh "{ССЫЛКА_ДЛЯ_СКАЧИВАНИЯ}" "{ИМЯ_ДОМЕНА}"``
 
+**ИМЯ_ДОМЕНА** - опционально. Если указано имя домена, то файл ZIP будет загружен и распакован в папку ``/var/www/{ИМЯ_ДОМЕНА}``. Если не указано, то в текущую папку.
+
 Справка: ``./shopker-install.sh -h``
 
 Пример: ``./shopker-install.sh "https://shopker.org/digital_goods/my_purchases_download/14?email=xxx@xxx.com&sc=xxxxxx" "mydomain.com"``
