@@ -180,7 +180,7 @@ fi
 
 Установить права на запуск: ``chmod +x shopker_server_install.sh``
 
-Использование: ``./shopker_server_install.sh "{DOWNLOAD_URL}" "{DOMAIN_NAME}"``
+Использование: ``./shopker_server_install.sh "{ИМЯ_ДОМЕНА}"``
 
 Справка: ``./shopker_server_install.sh -h``
 
