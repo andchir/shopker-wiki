@@ -1,4 +1,4 @@
-Bash скрипт для установки MongoDB, Nginx, PHP на сервере (VDS).
+Bash скрипт для установки MongoDB, Nginx, PHP на сервере (VDS) Ubuntu 20.04 LTS.
 
 Авторизоваться по SSH на сервере и создать файл "shopker_server_install.sh" в домашней директории пользователя:
 
