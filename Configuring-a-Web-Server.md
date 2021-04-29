@@ -6,6 +6,8 @@ server {
 
     server_name shopkeeper4;
     root /var/www/shopkeeper4/public;
+    
+    client_max_body_size 200m;
 
     location / {
         try_files $uri /index.php$is_args$args;
