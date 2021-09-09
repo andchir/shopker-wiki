@@ -42,5 +42,6 @@
     taskkill /IM php-cgi.exe /F
     ~~~
 7. Установить **MongoDB** и **MongoDBCompass**.
-8. ...
+8. Разархивировать "shopker-4.x.x" в папку "C:\www".
+9. ...
 
