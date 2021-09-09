@@ -9,7 +9,7 @@
 3. Разархивировать PHP в папку "C:\nginx\php".
 4. Переместить файл "php_mongodb.dll" в папку "C:\nginx\php\ext".
 5. Переместить файл "RunHiddenConsole.exe" в папку "C:\nginx".
-6. Создать файлы:
+6. В папке "C:\nginx" создать файлы:
 
     start.cmd
     ~~~
