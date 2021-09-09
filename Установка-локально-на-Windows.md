@@ -41,4 +41,6 @@
     taskkill /IM nginx.exe /F
     taskkill /IM php-cgi.exe /F
     ~~~
+7. Установить **MongoDB** и **MongoDBCompass**.
+8. ...
 
