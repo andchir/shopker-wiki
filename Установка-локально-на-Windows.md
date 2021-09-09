@@ -1,10 +1,10 @@
 1. Скачать:  
-  - https://nginx.org/ru/download.html
-  - https://windows.php.net/download#php-8.0
-  - https://pecl.php.net/package/mongodb
-  - https://www.mongodb.com/try/download/community
-  - https://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip
-  - https://shopker.org/catalog/shopker-info
+    - https://nginx.org/ru/download.html
+    - https://windows.php.net/download#php-8.0
+    - https://pecl.php.net/package/mongodb
+    - https://www.mongodb.com/try/download/community
+    - https://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip
+    - https://shopker.org/catalog/shopker-info
 2. Разархивировать nging в папку "C:\nginx".
 3. Разархивировать PHP в папку "C:\nginx\php".
 4. Переместить файл "php_mongodb.dll" в папку "C:\nginx\php\ext".
