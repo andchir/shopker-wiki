@@ -45,7 +45,7 @@
     taskkill /IM php-cgi.exe /F
     ~~~
 7. Установить **MongoDB** и **MongoDBCompass**.
-8. Разархивировать "shopker-4.x.x" в папку "C:\www".
+8. Разархивировать "shopker-4.x.x" в папку "C:\www\shopker".
 9. Запустить Блокнот с правами Администратора. Открыть файл "C:\Windows\System32\drivers\etc\hosts" и добавить строку:
     ~~~
     127.0.0.1       shopker.loc
