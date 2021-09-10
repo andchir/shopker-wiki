@@ -54,7 +54,7 @@
     ~~~
     location / {
         root   "C:\www";
-        index  index.html index.htm;
+        index  index.html index.htm index.php;
     }
     ...
     location ~ \.php$ {
@@ -77,7 +77,7 @@
             try_files $uri /index.php$is_args$args;
         }
 
-	    location ~ ^/(index|check)\.php(/|$) {
+	location ~ ^/(index|check)\.php(/|$) {
             fastcgi_pass   127.0.0.1:9000;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
