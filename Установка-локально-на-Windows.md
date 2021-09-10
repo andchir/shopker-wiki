@@ -5,9 +5,12 @@
     - https://www.mongodb.com/try/download/community
     - https://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip
     - https://shopker.org/catalog/shopker-info
-2. Разархивировать nging в папку "C:\nginx".
+2. Разархивировать nginx в папку "C:\nginx".
 3. Разархивировать PHP в папку "C:\nginx\php".
-4. Переместить файл "php_mongodb.dll" в папку "C:\nginx\php\ext".
+4. Переместить файл "php_mongodb.dll" в папку "C:\nginx\php\ext". Открыть в текстовом редакторе "C:\nginx\php\php.ini" и в блоке "Dynamic Extensions" добавить строку:
+    ~~~
+    extension=mongodb
+    ~~~
 5. Переместить файл "RunHiddenConsole.exe" в папку "C:\nginx".
 6. В папке "C:\nginx" создать файлы:
 
