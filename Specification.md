@@ -3,25 +3,31 @@
 Features
 --------
 
-- MongoDB database - simple and fast
-- Create an arbitrary number of fields for products. Setting input and output for fields
-- Parameters for products that may affect the price
-- A bunch of the parameter of the product with the photo
-- Attachment to customer's order file
-- Create photo gallery for products
-- Filtering products
-- Multiple categories for products
-- Multi-language
-- Multi-currency
-- Full-text search
-- Shopping cart with saving in the database
-- Order management, status change with sending a letter, order print
-- Reviews and ratings
-- Order statistics
-- Registration, authorization, password recovery for buyers
-- Personal account of the buyer
-- Online payment orders (PayPal, Yandeks.Kassa). Omnipay - a single API for payment systems
-- Ability to upload files for download by visitors, display the number of downloads
-- Simple form creation (YAML file)
-- Friendly URLs for search engines
-- Ready demo site
+- MongoDB database - simple and fast.
+- Creation of an arbitrary number of fields for goods. Configuring input and output for fields.
+- Parameters for products that can affect the price.
+- Possibility of booking objects for the date and time.
+- Linking a product parameter with a photo.
+- Attaching a client file to the order.
+- Ability to upload files for downloading by visitors, displaying the number of downloads.
+- Create a photo gallery for products.
+- Filtering goods.
+- Multiple categories for products.
+- Multi-lingualism.
+- Multi-currency.
+- Billing (showing page content after payment).
+- Full text search.
+- Import and export of goods (XLS, CSV).
+- A basket of goods with saving in the database.
+- Managing orders, changing status with sending a letter, printing an order.
+- Product reviews and ratings.
+- Export of the catalog to Yandex.Market.
+- Promo codes for discounts for buyers.
+- RESTful API. The ability to create pages by users.
+- Order statistics.
+- Registration, authorization, password recovery for buyers.
+- Buyer's personal account.
+- Online payment for orders (PayPal, Robokassa, Sberbank). Omnipay is a unified API for payment systems.
+- Simple creation of forms (YAML file).
+- Friendly URLs for search engines.
+- Ready demo site.
