@@ -169,3 +169,39 @@ Check status:
 ufw status
 ~~~
 
+### Install PHP 7.3
+
+~~~
+add-apt-repository ppa:ondrej/php
+~~~
+~~~
+apt update
+~~~
+Copy all lines together:
+~~~
+apt install php-pear php7.3 php7.3-common php7.3-cli \
+php7.3-curl php7.3-dev php7.3-gd php7.3-mbstring php7.3-zip \
+php7.3-xml php7.3-fpm php7.3-imagick php7.3-recode php7.3-tidy \
+php7.3-xmlrpc php7.3-intl php7.3-mongodb
+~~~
+~~~
+pecl install mongodb
+~~~
+
+~~~
+nano /etc/php/7.3/fpm/php.ini
+~~~
+Find a line, remove ";" and set the value to "0":
+~~~
+cgi.fix_pathinfo=0
+~~~
+~~~
+memory_limit = 256M
+upload_max_filesize = 100M
+post_max_size = 100M
+~~~
+
+Restart PHP-fpm:
+~~~
+/etc/init.d/php7.3-fpm restart
+~~~
