@@ -6,8 +6,6 @@ System requirements (Symfony 4.x)
 - MongoDB 3.2+
 - PHP extensions: mongodb, json, gd2, iconv
 
-To check your server compatibility, you can use the ``check.php`` script, which is located in the ``public`` folder.
-
 Installation Procedure
 -----------------
 1. Download ZIP archive from official site [https://shopker.org/](https://shopker.org/) and upload it to the server in the root directory of the site (not public).
@@ -16,19 +14,9 @@ Installation Procedure
 
 Usually on shared hosting it’s enough to specify the path to the public folder ``public`` in the domain settings or rename this folder (give the name specified in the domain settings). If the name of the public folder is changed, then you need to open the configuration file ``/config/parameters.yaml`` and edit the folder name in the parameter ``app.web_dir_path``.
 
-4. If the server does not use user and password authorization for MongoDB, you need to open the configuration file ``/config/packages/doctrine_mongodb.yaml`` and edit the database connection settings for ``doctrine_mongodb`` and ``doctrine_cache`` . Example:
-Replace string
-~~~
-server: 'mongodb://%mongodb_user%:%mongodb_password%@%mongodb_server%:%mongodb_port%'
-~~~
-with:
-~~~
-server: 'mongodb://%mongodb_server%:%mongodb_port%'
-~~~
+4. Open the website address in the browser. Fill in the fields on the install page and click the "Install" button.
 
-5. Open the website address in the browser. Fill in the fields on the install page and click the "Install" button.
-
-6. If all data is entered correctly, then everything necessary will be added to the database, as well as store test data.
+5. If all data is entered correctly, then everything necessary will be added to the database, as well as store test data.
 
 For installation on a dedicated server or VDS, for convenience, you can use the [Bash script for installation](https://github.com/andchir/shk4-wiki/blob/master/Bash-script-for-installation.md). It will download the archive of the application, unpack it and set the necessary permissions on the files and folders.
 
