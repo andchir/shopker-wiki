@@ -45,7 +45,7 @@ server {
     access_log /var/log/nginx/shopker_access.log;
 }
 ~~~
-``example.com`` - your domain name.
+``example.com`` - your domain name.  
 For a redirect from the ``www`` subdomain, add one more "server" block at the very top:
 ~~~
 server {
@@ -70,7 +70,7 @@ An example of the contents of a .htaccess file for an Apache server:
 </IfModule>
 ~~~
 
-``.htaccess`` file must be in the ``public`` folder.
+``.htaccess`` file must be in the ``public`` folder.  
 
 Additional materials
 ------------------------
