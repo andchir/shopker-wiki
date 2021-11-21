@@ -272,3 +272,38 @@ db.createUser(
 ~~~
 Done. To exit the mongo shell, press the "Ctrl + c" keys.
 
+### Installing Shopker
+
+Create config for Nginx:
+~~~
+nano /etc/nginx/sites-available/shopker.conf
+~~~
+Use configuration example from here [https://github.com/andchir/shopker-wiki/blob/master/Configuring-a-Web-Server.md](https://github.com/andchir/shopker-wiki/blob/master/Configuring-a-Web-Server.md)
+~~~
+ln -s /etc/nginx/sites-available/shopker.conf /etc/nginx/sites-enabled/shopker.conf
+~~~
+~~~
+/etc/init.d/nginx restart
+~~~
+
+~~~
+mkdir /var/www/shopker && cd /var/www/shopker
+~~~
+Download the ZIP file of the Shopker app, for example using wget:
+~~~
+wget https://path/to/shopker-4.1.x.zip
+~~~
+
+Unpack the archive:
+~~~
+unzip shopker-4.1.x.zip
+~~~
+Configure access rights:
+~~~
+cd /var/www/shopker
+sudo chown -R www-data:www-data .
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod 644 {} \;
+~~~
+
+Open the site in a browser and continue with the installation. You need to enter the database username, password, database name (it will be created automatically). Provide administrator email and password.
