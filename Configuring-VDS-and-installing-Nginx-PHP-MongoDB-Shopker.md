@@ -169,7 +169,7 @@ Check status:
 ufw status
 ~~~
 
-### Install PHP 7.4
+### Installing PHP 7.4
 
 ~~~
 add-apt-repository ppa:ondrej/php
@@ -205,3 +205,70 @@ Restart PHP-fpm:
 ~~~
 /etc/init.d/php7.4-fpm restart
 ~~~
+
+### Installing MongoDB 4.2
+
+A source:
+[https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
+~~~
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+~~~
+~~~
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+~~~
+~~~
+apt update
+apt install -y mongodb-org
+~~~
+
+~~~
+nano /etc/mongod.conf
+~~~
+Set values for parameters in the file (leave the order of parameters as they were):
+~~~
+bindIp: 0.0.0.0
+security:
+  authorization: "enabled"
+~~~
+Database start:
+~~~
+service mongod start
+~~~
+Checking the status (you should see "Active: active (running)"):
+~~~
+service mongod status
+~~~
+
+**Creating database users**
+~~~
+mongo
+use admin
+~~~
+Create a root user:
+~~~
+db.createUser(
+    {
+        user: "root",
+        pwd: "PASSWORD",
+        roles: [{role:"root", db:"admin"}]
+    }
+)
+~~~
+Replace "PASSWORD" with your password.  
+Log in as root:
+~~~
+db.auth('root', 'PASSWORD')
+~~~
+Create a user for the Shopker app:
+~~~
+db.createUser(
+    {
+        user: "shopker-user",
+        pwd: "PASSWORD",
+        roles: [{role: "readWrite", db: "shopker"}]
+    }
+)
+~~~
+Done. To exit the mongo shell, press the "Ctrl + c" keys.
+
