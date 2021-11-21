@@ -90,4 +90,4 @@
         access_log "logs\shopker_access.log";
     }
     ~~~
-11. Ready. Now you can start "start.cmd" by double clicking. Open the address "http://shopker.loc/" in your browser and continue installing Shopker. In the "Database name" field, enter "shopker" (or any other), leave the database connection fields (Username, Password, URI for connection) empty. Enter Email Address administrator email and password. Press the "Install" button.
+11. Done. Now you can start "start.cmd" by double clicking. Open the address "http://shopker.loc/" in your browser and continue installing Shopker. In the "Database name" field, enter "shopker" (or any other), leave the database connection fields (Username, Password, URI for connection) empty. Enter Email Address administrator email and password. Press the "Install" button.
