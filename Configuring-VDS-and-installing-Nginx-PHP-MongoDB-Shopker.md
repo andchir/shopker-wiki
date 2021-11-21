@@ -67,3 +67,55 @@ After generation, enter the secret phrase and save the private and public key fi
 ssh username@111.222.333.444
 ~~~
 
+Add your public ssh key:
+
+~~~
+mkdir .ssh
+~~~
+~~~
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAAD....." > ~/.ssh/authorized_key
+~~~
+
+Now, if you log out and log back in as **username**, you will not be prompted for a password. You will be prompted for a password only after entering the **su** command - to become a super-user.
+
+Become a super user using your password:
+~~~
+sudo su -
+~~~
+"-" - set the environment variables for the root user.
+
+Now you can disable password login and **root** login:
+~~~
+nano /etc/ssh/sshd_config
+~~~
+Uncomment the lines:
+~~~
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+~~~
+Note that the "PasswordAuthentication" line must be set to "no" (default is yes).
+
+In the line "PermitRootLogin" change the value to "no":
+~~~
+PermitRootLogin no
+~~~
+Press the **"Ctrl + x"** keys and then the **"y"** key (confirm the changes).
+
+Restart sshd:
+~~~
+/etc/init.d/ssh restart
+~~~
+
+If you don't want to use SSH keys, you can add a user to the **sudo** group with the following command:
+~~~
+usermod -aG sudo username
+~~~
+Adding to the **www-data** group:
+~~~
+usermod -aG www-data username
+~~~
+Check user groups:
+~~~
+groups username
+~~~
