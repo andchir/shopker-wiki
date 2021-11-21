@@ -1,4 +1,4 @@
-**Shopkeeper** - engine to create an online store. Used: PHP framework Symfony 4.x, Angular 7+, MongoDB 3+.
+**Shopker** - engine to create an online store. Used: PHP framework Symfony 5.x, Angular 11+, MongoDB 4+.
 
 Features
 --------
