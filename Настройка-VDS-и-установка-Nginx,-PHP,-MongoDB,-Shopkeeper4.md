@@ -169,7 +169,7 @@ ufw allow 'Nginx HTTPS'
 ufw status
 ~~~
 
-### Установка PHP 7.3
+### Установка PHP 7.4
 
 ~~~
 add-apt-repository ppa:ondrej/php
@@ -179,17 +179,17 @@ apt update
 ~~~
 Копировать все строки вместе:
 ~~~
-apt install php-pear php7.3 php7.3-common php7.3-cli \
-php7.3-curl php7.3-dev php7.3-gd php7.3-mbstring php7.3-zip \
-php7.3-xml php7.3-fpm php7.3-imagick php7.3-recode php7.3-tidy \
-php7.3-xmlrpc php7.3-intl php7.3-mongodb
+apt install php-pear php7.4 php7.4-common php7.4-cli \
+php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip \
+php7.4-xml php7.4-fpm php7.4-imagick php7.4-recode php7.4-tidy \
+php7.4-xmlrpc php7.4-intl php7.4-mongodb
 ~~~
 ~~~
 pecl install mongodb
 ~~~
 
 ~~~
-nano /etc/php/7.3/fpm/php.ini
+nano /etc/php/7.4/fpm/php.ini
 ~~~
 Найти строку, убрать ";" и установить значение "0":
 ~~~
@@ -203,7 +203,7 @@ post_max_size = 100M
 
 Перезапуск PHP-fpm:
 ~~~
-/etc/init.d/php7.3-fpm restart
+/etc/init.d/php7.4-fpm restart
 ~~~
 
 ### Установка MongoDB 4.2
