@@ -35,3 +35,19 @@ Install packages that come in handy:
 ~~~
 apt install software-properties-common wget nano unzip
 ~~~
+
+### Add a new super user
+
+~~~
+adduser username
+~~~
+~~~
+echo "username $(hostname)=(root) PASSWD: $(which su)" >> /etc/sudoers
+~~~
+Replace "username" with your name.
+
+Now, if we log out and log in as **username**, then we will not be able to execute any commands with super-user (sudo) rights, except **su**.
+
+~~~
+exit
+~~~
