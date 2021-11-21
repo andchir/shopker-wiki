@@ -10,7 +10,7 @@ To check your server compatibility, you can use the ``check.php`` script, which 
 
 Installation Procedure
 -----------------
-1. Download ZIP archive from official site [http://modx-shopkeeper.ru/](http://modx-shopkeeper.ru/) and upload it to the server in the root directory of the site (not public).
+1. Download ZIP archive from official site [https://shopker.ru/](https://shopker.ru/) and upload it to the server in the root directory of the site (not public).
 2. Unpack the archive. To do this, you can use the file manager, which is usually in the hosting panel.
 3. Check [web server settings](https://symfony.com/doc/current/setup/web_server_configuration.html). On a shared hosting, you usually do not need to configure the web server, the settings should already be made. If you can not configure Nginx or Apache, you need to contact the hosting support service.
 
