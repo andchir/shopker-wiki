@@ -44,13 +44,13 @@
     taskkill /IM nginx.exe /F
     taskkill /IM php-cgi.exe /F
     ~~~
-7. Установить **MongoDB** и **MongoDBCompass**.
-8. Разархивировать "shopker-4.x.x" в папку "C:\www\shopker".
-9. Запустить Блокнот с правами Администратора. Открыть файл "C:\Windows\System32\drivers\etc\hosts" и добавить строку:
+7. Install **MongoDB** and **MongoDBCompass**.
+8. Unpack "shopker-4.x.x" to the folder "C:\www\shopker".
+9. Launch Notepad with Administrator rights. Open the file "C:\Windows\System32\drivers\etc\hosts" and add the line:
     ~~~
     127.0.0.1       shopker.loc
     ~~~
-10. Открыть в текстовом редакторе файл "C:\nginx\conf\nginx.conf" и раскомментировать (убрать "#") некоторые строки, чтобы получилось так:
+10. Open the file "C:\nginx\conf\nginx.conf" in a text editor and uncomment (remove the "#") some lines so that it looks like this:
     ~~~
     location / {
         root   "C:\www";
@@ -65,7 +65,7 @@
         include        fastcgi_params;
     }
     ~~~
-    В секции "http" внизу добавить:
+    In the "http" section below, add:
     ~~~
     server {
         listen 80;
@@ -90,4 +90,4 @@
         access_log "logs\shopker_access.log";
     }
     ~~~
-11. Готово. Теперь можно запустить "start.cmd" двойным кликом. Открыть в браузере адрес "http://shopker.loc/" и продолжить установку Shopker. В поле "Имя базы данных" ввести "shopker" (или любое другое), поля подключения БД (Имя пользователя, Пароль, URI для подключения) оставить пустыми. Ввести Адрес эл. почты администратора и пароль. Нажать кнопку "Установить".
+11. Ready. Now you can start "start.cmd" by double clicking. Open the address "http://shopker.loc/" in your browser and continue installing Shopker. In the "Database name" field, enter "shopker" (or any other), leave the database connection fields (Username, Password, URI for connection) empty. Enter Email Address administrator email and password. Press the "Install" button.
