@@ -4,17 +4,17 @@ Example configuration for Nginx:
 server {
     listen 80;
 
-    server_name shopkeeper4;
-    root /var/www/shopkeeper4/public;
+    server_name example.com;
+    root /var/www/shopker/public;
     
-    client_max_body_size 200m;
+    client_max_body_size 250m;
 
     location / {
         try_files $uri /index.php$is_args$args;
     }
 
     location ~ ^/(index|check)\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
@@ -27,26 +27,34 @@ server {
     }
     
     location = /favicon.ico {
-	log_not_found off;
-	access_log off;
+        log_not_found off;
+        access_log off;
     }
 
     location = /robots.txt {
-	allow all;
-	log_not_found off;
-	access_log off;
+        allow all;
+        log_not_found off;
+        access_log off;
     }
 
     location ~ /\. {
-	deny all;
+        deny all;
     }
 
-    error_log /var/log/nginx/shopkeeper4_error.log;
-    access_log /var/log/nginx/shopkeeper4_access.log;
+    error_log /var/log/nginx/shopker_error.log;
+    access_log /var/log/nginx/shopker_access.log;
+}
+~~~
+``example.com`` - your domain name.
+For a redirect from the ``www`` subdomain, add one more "server" block at the very top:
+~~~
+server {
+    server_name www.example.com;
+    return 301 $scheme://example.com$request_uri;
 }
 ~~~
 
-An example of the contents of the .htaccess file for the Apache server:
+An example of the contents of a .htaccess file for an Apache server:
 ~~~
 <IfModule mod_rewrite.c>
     Options -MultiViews
@@ -62,7 +70,9 @@ An example of the contents of the .htaccess file for the Apache server:
 </IfModule>
 ~~~
 
-Additional
+``.htaccess`` file must be in the ``public`` folder.
+
+Additional materials
 ------------------------
-- [Configuring a Web Server for Symfony](https://symfony.com/doc/current/setup/web_server_configuration.html)
+- [Configuring a Web Server](https://symfony.com/doc/current/setup/web_server_configuration.html)
 
