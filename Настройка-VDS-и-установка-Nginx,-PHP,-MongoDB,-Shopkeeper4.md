@@ -259,7 +259,7 @@ db.createUser(
 ~~~
 db.auth('root', 'PASSWORD')
 ~~~
-Создаем пользователя для приложения Shopkeeper4:
+Создаем пользователя для приложения Shopker:
 ~~~
 db.createUser(
     {
