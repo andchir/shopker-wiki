@@ -51,3 +51,19 @@ Now, if we log out and log in as **username**, then we will not be able to execu
 ~~~
 exit
 ~~~
+
+We generate keys on our computer, if they are not there: 
+**Linux:**
+~~~
+ssh-keygen -t rsa
+~~~
+**~/.ssh/id_rsa.pub** - public key
+
+On **Windows** you can use **PuTTYgen**, which is installed with **PuTTY** ([https://www.putty.org/](https://www.putty.org/)).
+Select the key type **SSH2-RSA** and click **Generate**.
+After generation, enter the secret phrase and save the private and public key files.
+
+~~~
+ssh username@111.222.333.444
+~~~
+
