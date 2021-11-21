@@ -119,3 +119,53 @@ Check user groups:
 ~~~
 groups username
 ~~~
+
+### Installing a firewall
+
+~~~
+apt install ufw
+~~~
+Let's check the status:
+~~~
+ufw app list
+~~~
+You should see something like:
+~~~
+Available applications:
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+  OpenSSH
+~~~
+Allow SSH connections:
+~~~
+ufw allow OpenSSH
+~~~
+
+Enable firewall:
+~~~
+ufw enable
+~~~
+Check status:
+~~~
+ufw status
+~~~
+
+### Installing a Nginx
+
+~~~
+apt install nginx
+~~~
+
+Allow traffic:
+~~~
+ufw allow 'Nginx HTTP'
+~~~
+~~~
+ufw allow 'Nginx HTTPS'
+~~~
+Check status:
+~~~
+ufw status
+~~~
+
