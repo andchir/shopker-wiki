@@ -18,8 +18,8 @@ Features
 - Billing (showing page content after payment).
 - Full text search.
 - Import and export of goods (XLS, CSV).
-- A basket of goods with saving in the database.
-- Managing orders, changing status with sending a letter, printing an order.
+- A shopping cart of goods with saving in the database.
+- Managing orders, changing status with sending a email, printing an order.
 - Product reviews and ratings.
 - Export of the catalog to Yandex.Market.
 - Promo codes for discounts for buyers.
