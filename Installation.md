@@ -1,4 +1,4 @@
-Shopkeeper4 application can be installed on a common shared-hosting or VDS. While it is quite difficult to find shared hosting with MongoDB, but they are. You can also use a remote MongoDB database server, for example [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+Shopker application can be installed on a common shared-hosting or VDS. While it is quite difficult to find shared hosting with MongoDB, but they are. You can also use a remote MongoDB database server, for example [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 System requirements (Symfony 4.x)
 ----------------------------------
